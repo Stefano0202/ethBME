@@ -1,4 +1,4 @@
-
+<?php include 'connection.php'; ?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -46,13 +46,8 @@
                     <p>Un'escursione facile per scoprire i paesaggi mozzafiato delle Dolomiti.</p>
                 </li>
             </ul>
-        </div>
-    </section>
+            <p><strong>Stato della Connessione:</strong> <?php echo $connMessage; ?></p>
 
-    <!-- Sezione per mostrare il risultato della connessione -->
-    <section class="db-connection-status">
-        <div class="container">
-            <p><strong>Stato della Connessione:</strong> <?php echo $connMessage; ?></p> <!-- Visualizza il messaggio di connessione -->
         </div>
     </section>
 
