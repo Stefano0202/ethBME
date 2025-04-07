@@ -6,26 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escursioni in Montagna</title>
     <link rel="stylesheet" href="style.css">
-<?php
-$servername = "localhost";
-$username = "administrator";
-$password = 'eC$%C85bxM4aCX$z@zb8';
-$dbname = "BestMountainEver";
-
-// Creazione della connessione
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Controllo della connessione
-if ($conn->connect_error) {
-    $connMessage = "Connessione fallita: " . $conn->connect_error;
-} else {
-    $connMessage = "Connessione riuscita!";
-}
-
-// Qui puoi eseguire altre operazioni sul database se necessario, ad esempio:
-// $sql = "INSERT INTO Test (prova) VALUES ('ciao')";
-// $conn->query($sql);
-?>
 </head>
 <body>
     <header>
