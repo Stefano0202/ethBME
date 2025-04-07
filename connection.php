@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";  // O l'indirizzo IP del tuo server MySQL se è remoto
-$username = "nome_utente";
-$password = "password";
-$dbname = "nome_del_tuo_database";
+$servername = "localhost";
+$username = "administrator";
+$password = 'eC$%C85bxM4aCX$z@zb8';
+$dbname = "BestMountainEver";
 
 // Creazione della connessione
 $conn = new mysqli($servername, $username, $password, $dbname);
