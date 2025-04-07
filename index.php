@@ -1,5 +1,10 @@
 <?php
 include('connection.php');
+if ($conn->connect_error) {
+    echo "<p style='color: red;'>Connessione fallita: " . $conn->connect_error . "</p>";
+} else {
+    echo "<p style='color: green;'>Connessione riuscita!</p>";
+}
 ?>
 
 <!DOCTYPE html>
