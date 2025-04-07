@@ -12,4 +12,15 @@ if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 }
 echo "Connessione riuscita!";
+
+$sql = "INSERT INTO test (prova) VALUES ("ciao")";
+
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        echo "Dati inseriti correttamente nella tabella!";
+    } catch (PDOException $e) {
+        echo "Errore durante l'inserimento: " . $e->getMessage();
+    }
 ?>
