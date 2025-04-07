@@ -1,3 +1,11 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escursioni in Montagna</title>
+    <link rel="stylesheet" href="style.css">
 <?php
 $servername = "localhost";
 $username = "administrator";
@@ -18,14 +26,6 @@ if ($conn->connect_error) {
 // $sql = "INSERT INTO Test (prova) VALUES ('ciao')";
 // $conn->query($sql);
 ?>
-
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escursioni in Montagna</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
