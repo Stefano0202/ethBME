@@ -9,18 +9,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Controllo della connessione
 if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
+    echo "Connessione fallita";
 }
 echo "Connessione riuscita!";
 
-$sql = "INSERT INTO Test (prova) VALUES ('ciao')";
+//$sql = "INSERT INTO Test (prova) VALUES ('ciao')";
 
-    try {
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
+//    try {
+//        $stmt = $conn->prepare($sql);
+  //      $stmt->execute();
 
-        echo "Dati inseriti correttamente nella tabella!";
-    } catch (PDOException $e) {
-        echo "Errore durante l'inserimento: " . $e->getMessage();
-    }
+      //  echo "Dati inseriti correttamente nella tabella!";
+    //} catch (PDOException $e) {
+      //  echo "Errore durante l'inserimento: " . $e->getMessage();
+    //}
 ?>
