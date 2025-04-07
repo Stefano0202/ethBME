@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Escursioni in montagna</title>
+    <title>Registrazione - Escursioni in Montagna</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Accesso Utente</h1>
+            <h1>Registrazione</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="escursioni.html">Escursioni</a></li>
                     <li><a href="contatti.html">Contatti</a></li>
+                    <li><a href="login.html" class="login-button">Login</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="contact-form">
-        <h2>Effettua il login</h2>
-        <form action="login.php" method="POST">
+        <h2>Crea un nuovo account</h2>
+        <form action="register.php" method="POST">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Accedi</button>
-        </form>
-    </section>
+            <label for="confirm-password">Conferma Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
 
-    <div class="register-prompt">
-        <p>Non hai ancora un account?</p>
-        <a href="register.html" class="btn-register">Registrati</a>
-    </div>    
+            <button type="submit">Registrati</button>
+        </form>
+        <p style="text-align: center; margin-top: 10px;">
+            Hai già un account? <a href="login.html">Accedi</a>
+        </p>
+    </section>
 
     <footer>
         <div class="container">

@@ -54,6 +54,33 @@ nav ul li a {
     background-color: #555;
 }
 
+.register-prompt {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-prompt p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btn-register {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #333;
+    color: #fff;
+}
+
 /* Sezione Intro */
 .intro {
     text-align: center;
