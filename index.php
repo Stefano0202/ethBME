@@ -1,5 +1,6 @@
 <?php
-include('connection.php');
+session_start();
+require_once 'connection.php';
 if ($conn->connect_error) {
     echo "Connessione fallita";
 } else {
