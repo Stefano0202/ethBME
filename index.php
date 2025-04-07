@@ -1,11 +1,22 @@
 <?php
-session_start();
-require_once 'connection.php';
+$servername = "localhost";
+$username = "administrator";
+$password = 'eC$%C85bxM4aCX$z@zb8';
+$dbname = "BestMountainEver";
+
+// Creazione della connessione
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Controllo della connessione
 if ($conn->connect_error) {
-    echo "Connessione fallita";
+    $connMessage = "Connessione fallita: " . $conn->connect_error;
 } else {
-    echo "Connessione riuscita!";
+    $connMessage = "Connessione riuscita!";
 }
+
+// Qui puoi eseguire altre operazioni sul database se necessario, ad esempio:
+// $sql = "INSERT INTO Test (prova) VALUES ('ciao')";
+// $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +24,7 @@ if ($conn->connect_error) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escursioni in montagna</title>
+    <title>Escursioni in Montagna</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +33,7 @@ if ($conn->connect_error) {
             <h1>Benvenuti nelle Escursioni in Montagna</h1>
             <nav>
                 <ul>
-                    <li><a href="index.php">Home</a></li> <!-- Assicurati che sia .php -->
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="escursioni.html">Escursioni</a></li>
                     <li><a href="contatti.html">Contatti</a></li>
                     <li><a href="login.html">Login</a></li>
@@ -55,6 +66,13 @@ if ($conn->connect_error) {
                     <p>Un'escursione facile per scoprire i paesaggi mozzafiato delle Dolomiti.</p>
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <!-- Sezione per mostrare il risultato della connessione -->
+    <section class="db-connection-status">
+        <div class="container">
+            <p><strong>Stato della Connessione:</strong> <?php echo $connMessage; ?></p> <!-- Visualizza il messaggio di connessione -->
         </div>
     </section>
 
