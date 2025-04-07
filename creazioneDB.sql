@@ -1,7 +1,7 @@
 CREATE DATABASE BestMountainEver;
 
-CREATE USER nome_utente@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON BestMountainEver.* TO nome_utente@'%';
+CREATE USER administrator@localhost IDENTIFIED BY 'eC$%C85bxM4aCX$z@zb8';
+GRANT ALL PRIVILEGES ON BestMountainEver.* TO administrator@'eC$%C85bxM4aCX$z@zb8';
 FLUSH PRIVILEGES;
 
 CREATE TABLE utenti (
