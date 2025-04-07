@@ -1,9 +1,9 @@
 <?php
 include('connection.php');
 if ($conn->connect_error) {
-    echo "<p style='color: red;'>Connessione fallita: " . $conn->connect_error . "</p>";
+    echo "Connessione fallita";
 } else {
-    echo "<p style='color: green;'>Connessione riuscita!</p>";
+    echo "Connessione riuscita!";
 }
 ?>
 
