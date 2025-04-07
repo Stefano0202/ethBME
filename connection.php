@@ -1,4 +1,6 @@
 <?php
+
+echo "sono entrato nel file di configurazione";
 $servername = "localhost";
 $username = "administrator";
 $password = 'eC$%C85bxM4aCX$z@zb8';
