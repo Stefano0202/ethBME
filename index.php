@@ -46,8 +46,6 @@
                     <p>Un'escursione facile per scoprire i paesaggi mozzafiato delle Dolomiti.</p>
                 </li>
             </ul>
-            <p><strong>Stato della Connessione:</strong> <?php echo $connMessage; ?></p>
-
         </div>
     </section>
 
