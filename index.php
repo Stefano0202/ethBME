@@ -1,4 +1,6 @@
-<?php require_once 'connection.php';
+<?php 
+    echo "Sto per fare la connessione";
+require_once 'connection.php';
 if ($conn) {
     echo "Connessione al database riuscita!";
 }?>
