@@ -1,4 +1,7 @@
-<?php require_once 'connection.php'; ?>
+<?php require_once 'connection.php';
+if ($conn) {
+    echo "Connessione al database riuscita!";
+}?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
