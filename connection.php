@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 else
     echo "Connessione riuscita!";
 
-$sql = "INSERT INTO Test (prova) VALUES ('ciao')";
+$sql = "INSERT INTO Test (prova) VALUES ('ciaociao')";
 
     try {
         $stmt = $conn->prepare($sql);
