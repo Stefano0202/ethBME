@@ -22,7 +22,7 @@ $sql = "INSERT INTO Test (prova) VALUES ('ciao')";
         $stmt->execute();
 
         echo "Dati inseriti correttamente nella tabella!";
-    } catch (PDOException $e) {
+    } catch (Exception $e) {
         echo "Errore durante l'inserimento: " . $e->getMessage();
     }
 ?>
