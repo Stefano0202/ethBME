@@ -1,6 +1,5 @@
 <?php
 
-echo "sono entrato nel file di configurazione";
 $servername = "localhost";
 $username = "administrator";
 $password = 'eC$%C85bxM4aCX$z@zb8';
@@ -16,14 +15,14 @@ if ($conn->connect_error) {
 else
     $connMessage="Connessione riuscita!";
 
-//$sql = "INSERT INTO Test (prova) VALUES ('ciao')";
+$sql = "INSERT INTO Test (prova) VALUES ('ciao')";
 
-//    try {
-//        $stmt = $conn->prepare($sql);
-  //      $stmt->execute();
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
-      //  echo "Dati inseriti correttamente nella tabella!";
-    //} catch (PDOException $e) {
-      //  echo "Errore durante l'inserimento: " . $e->getMessage();
-    //}
+        echo "Dati inseriti correttamente nella tabella!";
+    } catch (PDOException $e) {
+        echo "Errore durante l'inserimento: " . $e->getMessage();
+    }
 ?>
