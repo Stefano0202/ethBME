@@ -10,10 +10,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Controllo della connessione
 if ($conn->connect_error) {
-    $connMessage="Connessione fallita";
+    echo "Connessione fallita";
 }
 else
-    $connMessage="Connessione riuscita!";
+    echo "Connessione riuscita!";
 
 $sql = "INSERT INTO Test (prova) VALUES ('ciao')";
 
