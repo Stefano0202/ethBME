@@ -1,6 +1,6 @@
 <?php
 // Configurazione
-define('SECRET_KEY', 'chiaveSegretaSuperSicura');
+define('SECRET_KEY', '%Ssgo*&94W$3AG1@M0Z8');
 
 // Funzione per validare il token
 function validaToken($token) {
