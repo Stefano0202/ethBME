@@ -1,3 +1,12 @@
+<?php
+// Verifica se l'utente è già autenticato
+if (isset($_COOKIE['authToken'])) {
+    // Se il token esiste, puoi verificare la sua validità qui
+    echo "Sei già loggato!";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -22,6 +31,7 @@
 
     <section class="contact-form">
         <h2>Effettua il login</h2>
+        <!-- Inizia il form di login -->
         <form action="login.php" method="POST">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
@@ -31,6 +41,13 @@
 
             <button type="submit">Accedi</button>
         </form>
+
+        <?php
+        // Mostra il messaggio di errore se presente
+        if (isset($errorMessage)) {
+            echo "<p style='color: red;'>$errorMessage</p>";
+        }
+        ?>
     </section>
 
     <div class="register-prompt">
