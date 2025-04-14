@@ -154,3 +154,33 @@ footer {
 .contact-form button:hover {
     background-color: #555;
 }
+
+/* Posizionamento del pulsante di logout in alto a destra */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li {
+    margin-right: 20px;
+}
+
+ul li:last-child {
+    margin-right: 0;
+}
+
+.btn-logout {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    background-color: #cc0000;
+}
+
