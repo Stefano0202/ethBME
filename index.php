@@ -1,9 +1,16 @@
-<?php 
-    echo "Sto per fare la connessione";
-require_once 'connection.php';
-if ($conn) {
-    echo "Connessione al database riuscita!";
-}?>
+<?php
+    // Includi la connessione al database
+    require_once 'connection.php';
+
+    // Verifica se l'utente è autenticato tramite il cookie
+    $isAuthenticated = isset($_COOKIE['authToken']);
+
+    // Se l'utente è autenticato, mostra il pulsante di logout
+    if ($isAuthenticated) {
+        $logoutUrl = 'logout.php'; // Pagina di logout (vedi sotto per il codice)
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -18,10 +25,14 @@ if ($conn) {
             <h1>Benvenuti nelle Escursioni in Montagna</h1>
             <nav>
                 <ul>
-                    <li><a href="connection.php">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="escursioni.html">Escursioni</a></li>
                     <li><a href="contatti.html">Contatti</a></li>
                     <li><a href="login.html">Login</a></li>
+                    <!-- Mostra il pulsante di logout solo se l'utente è autenticato -->
+                    <?php if ($isAuthenticated): ?>
+                        <li><a href="<?= $logoutUrl ?>" class="btn-logout">Logout</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
