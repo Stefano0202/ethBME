@@ -21,7 +21,7 @@ richiedeAutenticazione();
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="escursioni.php">Escursioni</a></li>
-                    <li><a href="contatti.php">Contatti</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
                     <!-- Mostra il pulsante di logout solo se l'utente è autenticato -->
                     <?php if (isset($_COOKIE['authToken'])): ?>
                         <li><a href="logout.php" class="btn-logout">Logout</a></li>
@@ -37,17 +37,17 @@ richiedeAutenticazione();
         <div class="container">
             <h2>Le nostre escursioni guidate</h2>
             <div class="escursione">
-                <h3>Monte Bianco</h3>
+                <h3><a href="commenti-monte-bianco.html">Monte Bianco</a></h3>
                 <p>Durata: 5 ore | Difficoltà: Alta</p>
                 <p>Un'escursione impegnativa, ideale per chi cerca un'avventura ad alta quota.</p>
             </div>
             <div class="escursione">
-                <h3>Gran Paradiso</h3>
+                <h3><a href="commenti-gran-paradiso.html">Gran Paradiso</a></h3>
                 <p>Durata: 3 ore | Difficoltà: Media</p>
                 <p>Un'escursione spettacolare nel parco del Gran Paradiso, perfetta per gli amanti della natura.</p>
             </div>
             <div class="escursione">
-                <h3>Dolomiti</h3>
+                <h3><a href="commenti-dolomiti.html">Dolomiti</a></h3>
                 <p>Durata: 4 ore | Difficoltà: Facile</p>
                 <p>Escursione facile adatta a famiglie e bambini, con panorami mozzafiato.</p>
             </div>
