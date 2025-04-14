@@ -49,17 +49,44 @@
         <div class="container">
             <h2>Le nostre escursioni più popolari</h2>
             <ul>
-                <li>
-                    <h3>Escursione al Monte Bianco</h3>
+                <li class="card">
+                    <img src="img/montebianco.jpg" alt="Monte Bianco">
+                    <h3>Monte Bianco</h3>
                     <p>Un'escursione impegnativa per ammirare uno dei picchi più alti d'Europa.</p>
+                    <div class="commenti">
+                        <ul class="commenti-lista">
+                            <li><strong>Giulia:</strong> Panorama mozzafiato!</li>
+                            <li><strong>Luca:</strong> Esperienza unica, consigliatissima!</li>
+                            <li><strong>Anna:</strong> Tanta fatica ma ne è valsa la pena</li>
+                        </ul>
+                        <h4><a href="commenti-monte-bianco.html">Commenti (clicca per leggerli tutti)</a></h4>
+                    </div>
                 </li>
-                <li>
-                    <h3>Escursione al Gran Paradiso</h3>
+                <li class="card">
+                    <img src="img/granparadiso.jpg" alt="Gran Paradiso">
+                    <h3>Gran Paradiso</h3>
                     <p>Un'escursione panoramica in uno dei parchi naturali più belli d'Italia.</p>
+                    <div class="commenti">
+                        <ul class="commenti-lista">
+                            <li><strong>Marta:</strong> Paesaggi spettacolari!</li>
+                            <li><strong>Simone:</strong> Perfetto anche con bambini.</li>
+                            <li><strong>Francesco:</strong> Occhio agli stambecchi</li>
+                        </ul>
+                        <h4><a href="commenti-gran-paradiso.html">Commenti (clicca per leggerli tutti)</a></h4>
+                    </div>
                 </li>
-                <li>
-                    <h3>Escursione nel Parco delle Dolomiti</h3>
+                <li class="card">
+                    <img src="img/dolomiti.jpg" alt="Dolomiti">
+                    <h3>Parco delle Dolomiti</h3>
                     <p>Un'escursione facile per scoprire i paesaggi mozzafiato delle Dolomiti.</p>
+                    <div class="commenti">
+                        <ul class="commenti-lista">
+                            <li><strong>Elena:</strong> I colori delle Dolomiti sono incredibili!</li>
+                            <li><strong>Davide:</strong> Escursione semplice e rilassante.</li>
+                            <li><strong>Sara:</strong> Ottimo percorso per principianti!</li>
+                        </ul>
+                        <h4><a href="commenti-dolomiti.html">Commenti (clicca per leggerli tutti)</a></h4>
+                    </div>
                 </li>
             </ul>
         </div>
