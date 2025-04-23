@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Cartella dove salvare i file caricati
-$targetDir = "./";
+$targetDir = "img/";
 
 // Verifica se il form è stato inviato
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
