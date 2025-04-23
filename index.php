@@ -28,7 +28,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="escursioni.html">Escursioni</a></li>
                     <li><a href="contatti.html">Contatti</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <!-- Mostra il pulsante di logout solo se l'utente è autenticato -->
                     <?php if ($isAuthenticated): ?>
                         <li><a href="<?= $logoutUrl ?>" class="btn-logout">Logout</a></li>
