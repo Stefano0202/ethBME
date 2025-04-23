@@ -33,7 +33,7 @@ if (isset($_COOKIE['authToken'])) {
     <section class="contact-form">
         <h2>Effettua il login</h2>
         <!-- Inizia il form di login -->
-        <form action="controlloCrdenziali.php" method="POST">
+        <form action="controlloCredenziali.php" method="POST">
             <label for="username">Username</label>
             <input type="username" id="username" name="username" required>
 
