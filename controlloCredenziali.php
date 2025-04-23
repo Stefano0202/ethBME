@@ -1,4 +1,5 @@
 <?php
+require 'connection.php';
 // Configurazione
 define('SECRET_KEY', '%Ssgo*&94W$3AG1@M0Z8');
 
