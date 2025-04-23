@@ -1,11 +1,12 @@
 <?php
 // Verifica se l'utente è già autenticato
 if (isset($_COOKIE['authToken'])) {
-    // Se il token esiste, puoi verificare la sua validità qui
-    echo "Sei già loggato!";
+    // Reindirizza alla home page
+    header("Location: index.html");
     exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="it">
