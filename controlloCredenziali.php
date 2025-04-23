@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    echo "Username: " . htmlspecialchars($user['password']) . "<br>";
+
     if ($user && password_verify($password, $user['password'])) { // Confronta la password usando password_verify
         $token = generaToken($username);
 
