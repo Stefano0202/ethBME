@@ -24,7 +24,7 @@ if (isset($_COOKIE['authToken'])) {
             <h1>Accesso Utente</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="escursioni.html">Escursioni</a></li>
                     <li><a href="contatti.html">Contatti</a></li>
                 </ul>
