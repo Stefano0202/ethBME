@@ -13,7 +13,13 @@ function generaToken($username) {
 
 // Login dell'utente
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    global $pdo; // Usa l'oggetto PDO definito all'esterno
+
+    try {
+        $pdo = new PDO('mysql:host=localhost; dbname=nome_database', 'username', 'password');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Errore di connessione: " . $e->getMessage());
+    }
 
     $username = $_POST['username'];
     $password = $_POST['password'];
