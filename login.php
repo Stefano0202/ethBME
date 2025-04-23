@@ -44,13 +44,6 @@ if (isset($_COOKIE['authToken'])) {
 
             <button type="submit">Accedi</button>
         </form>
-
-        <?php
-        // Mostra il messaggio di errore se presente
-        if (isset($errorMessage)) {
-            echo "<p style='color: red;'>$errorMessage</p>";
-        }
-        ?>
     </section>
 
     <div class="register-prompt">
