@@ -25,11 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    echo "Username: " . htmlspecialchars($user['password']) . "<br>";
+    echo "Prima dell'if";
 
     if ($user && password_verify($password, $user['password'])) { // Confronta la password usando password_verify
+        echo "Prima della generazione del token";
         $token = generaToken($username);
 
+        echo "Dopo l'if";
         // Imposta il cookie di autenticazione
         setcookie('authToken', $token, [
             'expires' => time() + 3600,
