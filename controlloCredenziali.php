@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
+    var_dump($stmt);
+
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     echo "Prima dell'if";
