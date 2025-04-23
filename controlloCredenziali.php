@@ -21,25 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    //$stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = '" . $username . "';");
-    //$stmt->execute();
-
     $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = :username");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    var_dump($user);
+    $passUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = :username AND password = '" . $password . "';");
+    $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = '" . $password . "';");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
-    $passUser = $stmt->fetch(PDO::FETCH_ASSOC);
-    var_dump($passUser);
+    $usernameUser = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    if ($user && $passUser) {
+    if ($passUser && $usernameUser) {
         $token = generaToken($username);
 
         setcookie('authToken', $token, [
@@ -50,9 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'samesite' => 'Strict',
         ]);
 
-        echo "Login effettuato con successo!";
+        echo "<script>
+                alert('Benvenuto " . $usernameUser["username"] . "');
+                window.location.href = 'login.php';
+              </script>";
     } else {
-        echo "Credenziali errate!";
+         echo "<script>
+                alert('Credenziali errate!');
+                window.location.href = 'login.php';
+              </script>";
     }
 }
 ?>
