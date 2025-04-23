@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Prepara la query per verificare l'utente nel database
-    $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = :username");
-    $stmt->bindParam(':username', $username);
+    $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = " . $username . ";");
+    //$stmt->bindParam(':username', $username);
     $stmt->execute();
 
     var_dump($stmt);
