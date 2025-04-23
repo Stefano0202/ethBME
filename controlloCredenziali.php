@@ -31,8 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     var_dump($user);
-    echo $password;
-    if ($user && password_verify($password, $user['password'])) {
+
+    $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = :username AND password = '" . $password . "';");
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+
+    $passUser = $stmt->fetch(PDO::FETCH_ASSOC);
+    var_dump($passUser);
+    
+    if ($user && $passUser) {
         echo "Prima della generazione del token<br>";
         $token = generaToken($username);
 
