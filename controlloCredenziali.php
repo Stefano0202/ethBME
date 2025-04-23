@@ -21,15 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT password FROM Utenti WHERE username = '" . $username . "';";
-    echo $query;
-
     $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = '" . $username . "';");
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    echo "Prima dell'if<br>";
+    var_dump($user);
 
     if ($user && password_verify($password, $user['password'])) {
         echo "Prima della generazione del token<br>";
