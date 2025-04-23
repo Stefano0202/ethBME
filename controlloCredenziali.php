@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usernameUser = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if ($passUser && $usernameUser) {
-        $token = generaToken($username);
+        $token = generaToken($usernameUser["username"]);
 
         setcookie('authToken', $token, [
             'expires' => time() + 3600,
