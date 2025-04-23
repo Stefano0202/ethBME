@@ -40,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     var_dump($passUser);
     
     if ($user && $passUser) {
-        echo "Prima della generazione del token<br>";
         $token = generaToken($username);
 
         setcookie('authToken', $token, [
