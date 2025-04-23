@@ -21,6 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    $query = "SELECT password FROM Utenti WHERE username = '" . $username . "';";
+    echo $query;
+
     $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = '" . $username . "';");
     $stmt->execute();
 
