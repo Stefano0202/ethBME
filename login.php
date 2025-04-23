@@ -4,7 +4,7 @@ require 'connection.php';
 // Verifica se l'utente è già autenticato
 if (isset($_COOKIE['authToken'])) {
     // Reindirizza alla home page
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 ?>
