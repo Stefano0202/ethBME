@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setcookie('authToken', $token, [
             'expires' => time() + 3600,
             'path' => '/',
-            'secure' => true,
+            'secure' => false,
             'httponly' => true,
             'samesite' => 'Strict',
         ]);
