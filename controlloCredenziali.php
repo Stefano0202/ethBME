@@ -17,7 +17,9 @@ function generaToken($username) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "sto per creare la sessione";
     session_start(); // Avvia la sessione
+    echo "sessione creata";
     global $pdo;
 
     $username = $_POST['username'];
