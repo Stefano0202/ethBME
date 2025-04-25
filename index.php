@@ -1,9 +1,12 @@
 <?php
     // Includi la connessione al database
     require_once 'connection.php';
+    session_start();
 
     // Verifica se l'utente è autenticato tramite il cookie
     $isAuthenticated = isset($_COOKIE['authToken']);
+
+    $isAdmin = isset($_SESSION['username']) && $_SESSION['username'] === 'Amilcare';
 
     // Se l'utente è autenticato, mostra il pulsante di logout
     if ($isAuthenticated) {
@@ -32,6 +35,9 @@
                     <!-- Mostra il pulsante di logout solo se l'utente è autenticato -->
                     <?php if ($isAuthenticated): ?>
                         <li><a href="<?= $logoutUrl ?>" class="btn-logout">Logout</a></li>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                        <li><a href="upload.php" class="btn-create-post">Crea un nuovo post</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>
