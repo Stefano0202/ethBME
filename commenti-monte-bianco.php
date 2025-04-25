@@ -16,7 +16,11 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="escursioni.html">Escursioni</a></li>
                 <li><a href="contatti.html">Contatti</a></li>
-                <li><a href="login.php">Login</a></li>
+                <?php if (isset($_COOKIE['authToken'])): ?>
+                        <li><a href="logout.php" class="btn-logout">Logout</a></li>
+                    <?php else: ?>
+                        <li><a href="login.php">Login</a></li>
+                    <?php endif; ?>
             </ul>
         </nav>
     </div>
