@@ -20,8 +20,8 @@ richiedeAutenticazione();
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="escursioni.html">Escursioni</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
+                <li><a href="escursioni.php">Escursioni</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
                 <?php if (isset($_COOKIE['authToken'])): ?>
                         <li><a href="logout.php" class="btn-logout">Logout</a></li>
                     <?php else: ?>
