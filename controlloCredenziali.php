@@ -30,11 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $passUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Verifica la corrispondenza delle credenziali
-    $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = :password");
+    $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = '" . $password . "';");
     $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password', $password); // Nota: usa password hashing per maggiore sicurezza
-    $stmt->execute();
+    $stmt->execute()
 
     $usernameUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
