@@ -7,6 +7,7 @@ require 'connection.php';
 
 define('SECRET_KEY', '%Ssgo*&94W$3AG1@M0Z8');
 
+// Funzione per generare il token
 function generaToken($username) {
     $payload = [
         'username' => $username,
@@ -16,27 +17,32 @@ function generaToken($username) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start(); // Avvia la sessione
     global $pdo;
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Prepara e esegue la query per recuperare la password
     $stmt = $pdo->prepare("SELECT password FROM Utenti WHERE username = :username");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
-
     $passUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = '" . $password . "';");
+    // Verifica la corrispondenza delle credenziali
+    $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = :password");
     $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password); // Nota: usa password hashing per maggiore sicurezza
     $stmt->execute();
 
     $usernameUser = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if ($passUser && $usernameUser) {
+        // Genera il token
         $token = generaToken($usernameUser["username"]);
 
+        // Salva il token nei cookie
         setcookie('authToken', $token, [
             'expires' => time() + 3600,
             'path' => '/',
@@ -45,9 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'samesite' => 'Strict',
         ]);
 
+        // Salva lo username nella sessione
+        $_SESSION['username'] = $usernameUser["username"];
+
         echo "<script>
-                alert('Benvenuto " . $usernameUser["username"] . "');
-                window.location.href = 'login.php';
+                alert('Benvenuto " . htmlspecialchars($usernameUser["username"]) . "');
+                window.location.href = 'index.php';
               </script>";
     } else {
          echo "<script>
