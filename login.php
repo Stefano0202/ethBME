@@ -25,8 +25,8 @@ if (isset($_COOKIE['authToken'])) {
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="escursioni.html">Escursioni</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+                    <li><a href="escursioni.php">Escursioni</a></li>
+                    <li><a href="contatti.php">Contatti</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,7 +48,7 @@ if (isset($_COOKIE['authToken'])) {
 
     <div class="register-prompt">
         <p>Non hai ancora un account?</p>
-        <a href="register.html" class="btn-register">Registrati</a>
+        <a href="register.php" class="btn-register">Registrati</a>
     </div>    
 
     <footer>
