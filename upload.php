@@ -1,4 +1,8 @@
 <?php
+require_once 'auth.php'; // Inclusione del file di autenticazione
+
+richiedeAutenticazione();
+
 // Mostra tutti gli errori per il debug
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
