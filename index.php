@@ -26,8 +26,8 @@
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="escursioni.html">Escursioni</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+                    <li><a href="escursioni.php">Escursioni</a></li>
+                    <li><a href="contatti.php">Contatti</a></li>
                     <li><a href="login.php">Login</a></li>
                     <!-- Mostra il pulsante di logout solo se l'utente è autenticato -->
                     <?php if ($isAuthenticated): ?>
@@ -59,7 +59,7 @@
                             <li><strong>Luca:</strong> Esperienza unica, consigliatissima!</li>
                             <li><strong>Anna:</strong> Tanta fatica ma ne è valsa la pena</li>
                         </ul>
-                        <h4><a href="commenti-monte-bianco.html">Commenti (clicca per leggerli tutti)</a></h4>
+                        <h4><a href="commenti-monte-bianco.php">Commenti (clicca per leggerli tutti)</a></h4>
                     </div>
                 </li>
                 <li class="card">
@@ -72,7 +72,7 @@
                             <li><strong>Simone:</strong> Perfetto anche con bambini.</li>
                             <li><strong>Francesco:</strong> Occhio agli stambecchi</li>
                         </ul>
-                        <h4><a href="commenti-gran-paradiso.html">Commenti (clicca per leggerli tutti)</a></h4>
+                        <h4><a href="commenti-gran-paradiso.php">Commenti (clicca per leggerli tutti)</a></h4>
                     </div>
                 </li>
                 <li class="card">
@@ -85,7 +85,7 @@
                             <li><strong>Davide:</strong> Escursione semplice e rilassante.</li>
                             <li><strong>Sara:</strong> Ottimo percorso per principianti!</li>
                         </ul>
-                        <h4><a href="commenti-dolomiti.html">Commenti (clicca per leggerli tutti)</a></h4>
+                        <h4><a href="commenti-dolomiti.php">Commenti (clicca per leggerli tutti)</a></h4>
                     </div>
                 </li>
             </ul>
