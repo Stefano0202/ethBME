@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "recuperata password";
     $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = '" . $password . "';");
     $stmt->bindParam(':username', $username);
-    $stmt->execute()
+    $stmt->execute();
 
     $usernameUser = $stmt->fetch(PDO::FETCH_ASSOC);
     echo "recuperato username";
