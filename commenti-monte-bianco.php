@@ -1,3 +1,9 @@
+<?php
+require_once 'auth.php'; // Inclusione del file di autenticazione
+
+// Verifica che l'utente sia loggato
+richiedeAutenticazione();
+?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
