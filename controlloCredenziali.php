@@ -17,9 +17,7 @@ function generaToken($username) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "sto per creare la sessione";
     session_start(); // Avvia la sessione
-    echo "sessione creata";
     global $pdo;
 
     $username = $_POST['username'];
@@ -31,17 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
 
     $passUser = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo "recuperata password";
     $stmt = $pdo->prepare("SELECT username FROM Utenti WHERE username = :username AND password = '" . $password . "';");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
     $usernameUser = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo "recuperato username";
+   
     if ($passUser && $usernameUser) {
         // Genera il token
         $token = generaToken($usernameUser["username"]);
-        echo "sono dentro l'if";
+        
         // Salva il token nei cookie
         setcookie('authToken', $token, [
             'expires' => time() + 3600,
@@ -50,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'httponly' => true,
             'samesite' => 'Strict',
         ]);
-        echo "cookie settato";
+        
         // Salva lo username nella sessione
         $_SESSION['username'] = $usernameUser["username"];
-        echo "inserita variabile sessione";
+        ;
         echo "<script>
                 alert('Benvenuto " . htmlspecialchars($usernameUser["username"]) . "');
                 window.location.href = 'index.php';
