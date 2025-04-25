@@ -3,6 +3,15 @@ require_once 'auth.php'; // Inclusione del file di autenticazione
 
 richiedeAutenticazione();
 
+session_start(); // Avvia la sessione
+
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'Amilcare') {
+    echo "<script>
+            window.location.href = 'login.php';
+          </script>";
+    exit();
+}
+
 // Mostra tutti gli errori per il debug
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
